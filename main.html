@@ -7,16 +7,6 @@
   <link rel="shortcut icon" href="https://yourdomain.com/favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
 
-  <!-- Optional Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "url": "https://railway.app",
-    "logo": "https://files.catbox.moe/ktqas9.jpg"
-  }
-  </script>
-
   <style>
     body {
       background: linear-gradient(135deg, #0d0d0d, #1c1c1c);
@@ -45,8 +35,8 @@
     .button {
       width: 180px;
       height: 45px;
-      background-color: #4caf50; /* Changed to match audio button style */
-      color: white; /* Changed to white for contrast */
+      background-color: #4caf50;
+      color: white;
       font-weight: 700;
       border: none;
       border-radius: 12px;
@@ -65,6 +55,32 @@
       background-color: #45a049;
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
       transform: perspective(500px) rotateX(10deg) rotateY(10deg);
+    }
+
+    .audio-controls {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .play-btn, .pause-btn {
+      width: 100px;
+      height: 40px;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .play-btn {
+      background-color: #2196f3; /* Blue */
+    }
+
+    .pause-btn {
+      background-color: #f44336; /* Red */
     }
 
     footer {
@@ -91,29 +107,26 @@
 
     <a href="/pair" class="button" target="_blank">PAIRING CODE</a>
     <a href="/qr" class="button" target="_blank">QR CODE</a>
-    <a href="https://github.com/YAMAL-YENG/AIMS-MD/fork" class="button" target="_blank">AIMS-MD </a>
+    <a href="https://github.com/YAMAL-YENG/AIMS-MD/fork" class="button" target="_blank">AIMS-MD</a>
     <a href="https://whatsapp.com" class="button" target="_blank">WhatsApp</a>
     <a href="https://wa.me/254769677305/" class="button" target="_blank">ERROR</a>
+
+    <!-- 🎵 Music Control Buttons -->
+    <div class="audio-controls">
+      <button class="play-btn" onclick="document.getElementById('music').play()">▶ Play</button>
+      <button class="pause-btn" onclick="document.getElementById('music').pause()">⏸ Pause</button>
+    </div>
   </div>
 
   <footer>
     HACKLINK TECH.INC &copy; <span id="currentYear"></span>
   </footer>
 
-  <!-- Audio element - autoplay -->
-  <audio id="background-audio" src="https://files.catbox.moe/w2j17k.m4a" autoplay loop></audio>
+  <!-- 🎶 Audio Player -->
+  <audio id="music" src="https://files.catbox.moe/pd7c7z.mp3" loop></audio>
 
   <script>
     document.getElementById("currentYear").textContent = new Date().getFullYear();
-
-    // Attempt to play audio on page load (for browsers that block autoplay without interaction)
-    const audio = document.getElementById('background-audio');
-    window.addEventListener("load", () => {
-      audio.play().catch(() => {
-        // Autoplay blocked - fallback: user interaction required
-        console.log("Autoplay enabled.");
-      });
-    });
   </script>
 </body>
 </html>
