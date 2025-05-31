@@ -45,25 +45,26 @@
     .button {
       width: 180px;
       height: 45px;
-      background-color: #ffffff;
-      color: #000000;
+      background-color: #4caf50; /* Changed to match audio button style */
+      color: white; /* Changed to white for contrast */
       font-weight: 700;
       border: none;
       border-radius: 12px;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: background-color 3.6s ease, box-shadow 0.6s ease, transform 0.6s ease;
       text-decoration: none;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 10px 0;
+      transform: perspective(500px) rotateX(0deg) rotateY(0deg);
     }
 
     .button:hover {
-      background-color: #f0f0f0;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-      transform: scale(1.05);
+      background-color: #45a049;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      transform: perspective(500px) rotateX(10deg) rotateY(10deg);
     }
 
     footer {
@@ -97,11 +98,23 @@
   </div>
 
   <footer>
-  HACKLINK TECH.INC &copy; <span id="currentYear"></span>
+    HACKLINK TECH.INC &copy; <span id="currentYear"></span>
   </footer>
+
+  <!-- Audio element - autoplay -->
+  <audio id="background-audio" src="https://files.catbox.moe/w2j17k.m4a" autoplay loop></audio>
 
   <script>
     document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    // Attempt to play audio on page load (for browsers that block autoplay without interaction)
+    const audio = document.getElementById('background-audio');
+    window.addEventListener("load", () => {
+      audio.play().catch(() => {
+        // Autoplay blocked - fallback: user interaction required
+        console.log("Autoplay blocked, waiting for user interaction.");
+      });
+    });
   </script>
 </body>
-  </html>
+</html>
