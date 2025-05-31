@@ -111,11 +111,13 @@
     <a href="https://whatsapp.com" class="button" target="_blank">WhatsApp</a>
     <a href="https://wa.me/254769677305/" class="button" target="_blank">ERROR</a>
 
-    <!-- 🎵 Music Control Buttons -->
+    <!-- 🔊 Audio Controls -->
     <div class="audio-controls">
-      <button class="play-btn" onclick="document.getElementById('music').play()">▶ Play</button>
-      <button class="pause-btn" onclick="document.getElementById('music').pause()">⏸ Pause</button>
+      <button class="play-btn" onclick="playMusic()">▶ Play</button>
+      <button class="pause-btn" onclick="pauseMusic()">⏸ Pause</button>
     </div>
+
+    <audio id="background-audio" src="https://files.catbox.moe/pd7c7z.mp3" loop></audio>
   </div>
 
   <footer>
@@ -123,10 +125,28 @@
   </footer>
 
   <!-- 🎶 Audio Player -->
-  <audio id="music" src="https://files.catbox.moe/pd7c7z.mp3" loop></audio>
+  const audio = document.getElementById('background-audio');
 
-  <script>
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
+    function playMusic() {
+      audio.play().catch(err => console.log("Play blocked:", err));
+    }
+
+    function pauseMusic() {
+      audio.pause();
+    }
+
+    // Try autoplay
+    window.addEventListener("load", () => {
+      audio.play().catch(() => {
+        console.log("Autoplay blocked: waiting for interaction.");
+      });
+    });
+
+    // Trigger playback on user interaction
+    document.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play().catch(() => {});
+      }
   </script>
 </body>
 </html>
