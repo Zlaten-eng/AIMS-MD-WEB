@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AIMS-MD Tools</title>
+  <title>AIMS(SIGMA-MD) Tools</title>
   <link rel="shortcut icon" href="https://yourdomain.com/favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
 
@@ -76,11 +76,11 @@
     }
 
     .play-btn {
-      background-color: #2196f3; /* Blue */
+      background-color: #2196f3;
     }
 
     .pause-btn {
-      background-color: #f44336; /* Red */
+      background-color: #f44336;
     }
 
     footer {
@@ -124,8 +124,9 @@
     HACKLINK TECH.INC &copy; <span id="currentYear"></span>
   </footer>
 
-  <!-- 🎶 Audio Player -->
-  const audio = document.getElementById('background-audio');
+  <script>
+    // 🎶 Audio Controls
+    const audio = document.getElementById('background-audio');
 
     function playMusic() {
       audio.play().catch(err => console.log("Play blocked:", err));
@@ -135,18 +136,22 @@
       audio.pause();
     }
 
-    // Try autoplay
+    // Try autoplay on load
     window.addEventListener("load", () => {
       audio.play().catch(() => {
         console.log("Autoplay blocked: waiting for interaction.");
       });
     });
 
-    // Trigger playback on user interaction
+    // Try resume on any user click
     document.addEventListener("click", () => {
       if (audio.paused) {
         audio.play().catch(() => {});
       }
+    });
+
+    // Current year in footer
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
