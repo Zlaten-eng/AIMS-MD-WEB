@@ -111,47 +111,16 @@
     <a href="https://whatsapp.com" class="button" target="_blank">WhatsApp</a>
     <a href="https://wa.me/254769677305/" class="button" target="_blank">ERROR</a>
 
-    <!-- 🔊 Audio Controls -->
-    <div class="audio-controls">
-      <button class="play-btn" onclick="playMusic()">▶ Play</button>
-      <button class="pause-btn" onclick="pauseMusic()">⏸ Pause</button>
-    </div>
+    
 
-    <audio id="background-audio" src="https://files.catbox.moe/pd7c7z.mp3" loop></audio>
-  </div>
+    
 
   <footer>
     HACKLINK TECH.INC &copy; <span id="currentYear"></span>
   </footer>
-
-  <script>
-    // 🎶 Audio Controls
-    const audio = document.getElementById('background-audio');
-
-    function playMusic() {
-      audio.play().catch(err => console.log("Play :", err));
-    }
-
-    function pauseMusic() {
-      audio.pause();
-    }
-
-    // Try autoplay on load
-    window.addEventListener("load", () => {
-      audio.play().catch(() => {
-        console.log("Autoplay blocked: waiting for interaction.");
-      });
-    });
-
-    // Try resume on any user click
-    document.addEventListener("click", () => {
-      if (audio.paused) {
-        audio.play().catch(() => {});
-      }
-    });
-
-    // Current year in footer
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  
+    }); 
+    
   </script>
 </body>
 </html>
