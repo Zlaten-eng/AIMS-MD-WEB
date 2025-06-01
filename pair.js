@@ -35,7 +35,7 @@ router.get('/', async (req, res) => {
   const id = makeid();
   let num = req.query.number;
 
-  async function SIGMA_MD_PAIR_CODE() {
+  async function ROVER_XMD_PAIR_CODE(); {
     const { state, saveCreds } = await useMultiFileAuthState('./temp/' + id);
 
     try {
@@ -99,8 +99,8 @@ router.get('/', async (req, res) => {
             let desc = `*Yooh radarada mkuu ! * 
 
 > Do not share your session id with anyone.
-
- *Thanks for using SIGMA-MD* 
+> please join our channel.
+ *Thanks for using ROVER-XMD* 
 
 > Join WhatsApp Channel :- ⤵️
 
@@ -108,8 +108,7 @@ https://whatsapp.com/channel/0029VbAVuiVBPzjdU7EVNw0t
 
 Don't forget to fork the repo ⬇️
 
-https://github.com/YAMAL-YENG/SIGMA-MD
-
+https://github.com/Conway-eng/ROVER-XMD
 > *© Powered by SIGMATECH*
 `;
             await sock.sendMessage(sock.user.id, {
@@ -133,7 +132,7 @@ https://github.com/YAMAL-YENG/SIGMA-MD
               text: desc,
               contextInfo: {
                 externalAdReply: {
-                  title: "SIGMA-MD",
+                  title: "ROVER-XMD",
                   thumbnailUrl: "https://files.catbox.moe/mg79db.jpg",
                   sourceUrl: "https://whatsapp.com/channel/0029VbAVuiVBPzjdU7EVNw0t",
                   mediaType: 2,
@@ -153,7 +152,7 @@ https://github.com/YAMAL-YENG/SIGMA-MD
 
         } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
           await delay(10);
-          SIGMA_MD_PAIR_CODE();
+          ROVER_XMD_PAIR_CODE();
         }
       });
 
@@ -166,7 +165,7 @@ https://github.com/YAMAL-YENG/SIGMA-MD
     }
   }
 
-  return await SIGMA_MD_PAIR_CODE();
+  return await ROVER_XMD_PAIR_CODE();
 });
 
 /*
