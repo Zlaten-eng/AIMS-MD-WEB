@@ -72,11 +72,11 @@ var randomItem = selectRandomItem(items);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
                         let md = "TONIC-MD~" + string_session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
-                        let desc = `*Hello there TONIC MD User! 👋🏻* 
+                        let desc = `*Hello there ROVER-XMD User! 👋🏻* 
 
 > Do not share your session id with anyone.
 
- *Thanks for using AIMS-MD 🚩* 
+ *Thanks for using ROVER-XMD 🚩* 
 
 > Join WhatsApp Channel :- ⤵️
  
@@ -84,9 +84,10 @@ https://whatsapp.com/channel/0029VayQpwx8F2pIKEWkcd0f
 
 Dont forget to fork the repo ⬇️
 
-https://github.com/YAMAL-YENG/AIMS-MD
+https://github.com/Conway-eng/ROVER-XMD
 
-> *©POWERED BY HACKLINK🖤*`;
+
+> *©POWERED BY HACKLINK TECH.INC*`;
                         await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
@@ -102,11 +103,11 @@ renderLargerThumbnail: true
 {quoted:code })
                     } catch (e) {
                             let ddd = sock.sendMessage(sock.user.id, { text: e });
-                            let desc = `*Hello there TONIC MD User! 👋🏻* 
+                            let desc = `*Hello there ROVER-XMD User! 👋🏻* 
 
 > Do not share your session id with anyone.
 
- *Thanks for using AIMS-MD🚩* 
+ *Thanks for using ROVER-XMD🚩* 
 
 > Join WhatsApp Channel :- ⤵️
  
@@ -114,9 +115,9 @@ https://whatsapp.com/channel/0029VbAVuiVBPzjdU7EVNw0t
 
 Dont forget to fork the repo ⬇️
 
-https://github.com/YAMAL-YENG/AIMS-MD
+https://github.com/Conway-eng/ROVER-XMD
 
-> *© POWERED BY AIMS-MD 🖤*`;
+> *© POWERED BY HACKLINK TECH.INC*`;
                             await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
