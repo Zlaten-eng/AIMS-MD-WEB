@@ -35,7 +35,7 @@ router.get('/', async (req, res) => {
   const id = makeid();
   let num = req.query.number;
 
-  async function ROVER_XMD_PAIR_CODE(); {
+  async function SIGMA_MD_PAIR_CODE() {
     const { state, saveCreds } = await useMultiFileAuthState('./temp/' + id);
 
     try {
@@ -99,7 +99,7 @@ router.get('/', async (req, res) => {
             let desc = `*Yooh radarada mkuu ! * 
 
 > Do not share your session id with anyone.
-> please join our channel.
+> please join our support channel.
  *Thanks for using ROVER-XMD* 
 
 > Join WhatsApp Channel :- ⤵️
@@ -109,7 +109,8 @@ https://whatsapp.com/channel/0029VbAVuiVBPzjdU7EVNw0t
 Don't forget to fork the repo ⬇️
 
 https://github.com/Conway-eng/ROVER-XMD
-> *© Powered by SIGMATECH*
+
+> *© Powered by HACKLINK TECH.INC*
 `;
             await sock.sendMessage(sock.user.id, {
               text: desc,
@@ -152,7 +153,7 @@ https://github.com/Conway-eng/ROVER-XMD
 
         } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
           await delay(10);
-          ROVER_XMD_PAIR_CODE();
+          SIGMA_MD_PAIR_CODE();
         }
       });
 
@@ -165,7 +166,7 @@ https://github.com/Conway-eng/ROVER-XMD
     }
   }
 
-  return await ROVER_XMD_PAIR_CODE();
+  return await SIGMA_MD_PAIR_CODE();
 });
 
 /*
